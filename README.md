@@ -14,7 +14,7 @@ lsdnmredata.bat my.nmredata.sdf
 ```
 For Linux/MACOS:
 ```
-lsdnmredata.sh my.nmredata.sdf 
+./lsdnmredata.sh my.nmredata.sdf 
 ```
 This produces the lsdf input:  **my.nmredata.sdf.lsd**
 Then lsd generates the list of possible structures in the solution file **my.nmredata.sdf.lsd.sol **and in the *Stucture Data Format* in: **my.nmredata.sdf.lsd.sol.sdf**.
