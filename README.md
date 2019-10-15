@@ -6,9 +6,9 @@ Download the LSD distribution for your platform from http://eos.univ-reims.fr/LS
 
 Copy all the files from the code directory of this project into the LSD directory. This add a number of jar files (not be to be used directly) and an lsdnmredata.bat/sh file. The bat/sh files are scripts (bat for windows, sh for Linux/MacOs) which generate from an NMReDATA file the input for LSD and runs LSD with it. It expects an nmredata file as parameter. 
 
-For example a file called my.nmredata.sdf you would run
+
 ## Usage
-For windows:
+For windows, a file called my.nmredata.sdf would run with
 ```
 lsdnmredata.bat my.nmredata.sdf 
 ```
@@ -16,14 +16,16 @@ For Linux/MACOS:
 ```
 lsdnmredata.sh my.nmredata.sdf 
 ```
-This will produce the files my.nmredata.sdf.lsd (the lsd input), my.nmredata.sdf.lsd.sol (the lsd solution file), and my.nmredata.sdf.lsd.sol.sdf, the solution(s) as an sdf file. 
+This produces the lsdf input:  **my.nmredata.sdf.lsd**
+Then lsd generates the list of possible structures in the solution file **my.nmredata.sdf.lsd.sol **and in the *Stucture Data Format* in: **my.nmredata.sdf.lsd.sol.sdf**.
 
-The input file must contain a 1H, 13C, HMBC, HSQC, and COSY spectrum. 
+The NMReDATA input file must contain data from 1H, 13C, HMBC, HSQC, and COSY spectra. 
 
-You can also use the LSD input file in LSD manually and change the file to add more information. 
+You can edit the LSD input file to add/remove information. 
 
 ## Examples
 The examples folder contains a number of examples, each with the original input file (x.nmredata.sdf) and the resulting files.
+More can be found in the NMR records from https://github.com/NMReDATAInitiative/Examples-of-NMR-records
 
 ## Command lines for installation and run on MAC OSX
 ```
