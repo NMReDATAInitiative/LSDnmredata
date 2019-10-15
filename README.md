@@ -29,21 +29,27 @@ More can be found in the NMR records from https://github.com/NMReDATAInitiative/
 
 ## Command lines for installation and run on MAC OSX
 ```
-# install wget if not already installed
+# install wget and gunzip if not already installed
 if ! [ -x "$(command -v wget)" ]; then
-  echo 'Error: wget is not installed.' 
+  echo 'Warning: wget is not installed.' 
   brew install wget
   brew link wget
+fi
+if ! [ -x "$(command -v gunzip)" ]; then
+  echo 'Warning: gunzip is not installed.' 
+  brew install gunzip
+  brew link gunzip
 fi
 wget https://github.com/NMReDATAInitiative/LSDnmredata/archive/master.zip
 unzip master.zip
 rm master.zip
 
-# uncomment to download uncompiled LSD ... it still needs tobe compiled
+# uncomment to download uncompiled LSD 
 #wget http://eos.univ-reims.fr/LSD/LSD-3.4.10.tar.gz
 #gunzip LSD-3.4.10.tar.gz
 #tar xfv LSD-3.4.10.tar
 #rm LSD-3.4.10.tar
+#... it still needs to be compiled - follow the instructions in the installation.html file
 
 # install compiled LSD for mac OSX
 wget http://eos.univ-reims.fr/LSD/iLSD-3.4.10.tar.gz
