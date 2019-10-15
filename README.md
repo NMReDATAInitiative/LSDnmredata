@@ -6,6 +6,7 @@ Download the LSD distribution for your platform from http://eos.univ-reims.fr/LS
 
 Copy all the files from the code directory of this project into the LSD directory. This add a number of jar files (not be to be used directly) and an lsdnmredata.bat/sh file. The bat/sh files are scripts (bat for windows, sh for Linux/MacOs) which generate from an NMReDATA file the input for LSD and runs LSD with it. It expects an nmredata file as parameter. 
 
+You also need a Java Runtime Environment installed. Any installation named Java should include this. The version should be Java 8 or higher, which means any newer Java version. If you are unsure, try calling "java -version" from a command line to see the Java version installed.
 
 ## Usage
 For windows, a file called my.nmredata.sdf would run with
