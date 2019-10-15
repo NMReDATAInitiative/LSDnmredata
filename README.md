@@ -13,5 +13,36 @@ lsdnmredata.sh my.nmredata.sdf (for Liunx/MacOs)
 depending on your operating system. This will produce the files my.nmredata.sdf.lsd (the lsd input), my.nmredata.sdf.lsd.sol (the lsd solution file), and my.nmredata.sdf.lsd.sol.sdf, the solution(s) as an sdf file. The input file must contain a 1H, 13C, HMBC, HSQC, and COSY spectrum. You can also use the LSD input file in LSD manually and change the file to add more information. 
 
 ## Examples
-
 The examples folder contains a number of examples, each with the original input file (x.nmredata.sdf) and the resulting files.
+
+## Command lines for installation and run on MAC OSX
+
+
+```
+if ! [ -x "$(command -v wget)" ]; then
+  echo 'Error: wget is not installed.' 
+  brew install wget
+  brew link wget
+fi
+wget https://github.com/NMReDATAInitiative/LSDnmredata/archive/master.zip
+unzip master.zip
+rm master.zip
+
+# uncomment to download uncompiled LSD ... it still needs tobe compiled
+#wget http://eos.univ-reims.fr/LSD/LSD-3.4.10.tar.gz
+#gunzip LSD-3.4.10.tar.gz
+#tar xfv LSD-3.4.10.tar
+#rm LSD-3.4.10.tar
+
+# install compiled LSD for mac OSX
+wget http://eos.univ-reims.fr/LSD/iLSD-3.4.10.tar.gz
+gunzip iLSD-3.4.10.tar.gz
+tar xfv iLSD-3.4.10.tar
+rm iLSD-3.4.10.tar
+cp LSDnmredata-master/code/* iLSD-3.4.10/
+
+cd iLSD-3.4.10
+
+./lsdnmredata.sh ../LSDnmredata-master/examples/ethylcrotonate.nmredata.sdf
+./lsdnmredata.sh "../LSDnmredata-master/examples/HAP_benzo(a)pyrene_assignments_1.nmredata.sdf"
+```
